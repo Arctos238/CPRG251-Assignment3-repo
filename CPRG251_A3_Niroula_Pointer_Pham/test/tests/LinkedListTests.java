@@ -2,6 +2,7 @@ package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 import org.junit.jupiter.api.*;
 
 import sait.sll.utility.*;
@@ -13,7 +14,11 @@ import sait.sll.utility.*;
  * @version 2020-03-24
  *
  */
-class LinkedListTests {
+class LinkedListTests{
+	/**
+	 * 
+	 */
+	
 	/**
 	 * Contains the linked list that is manipulated in each test.
 	 */
