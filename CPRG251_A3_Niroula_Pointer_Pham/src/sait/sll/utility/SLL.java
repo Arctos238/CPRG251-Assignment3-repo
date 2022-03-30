@@ -99,6 +99,9 @@ public class SLL implements LinkedListADT, Serializable {
 			previousNode.setNextNode(newNode);
 			size++;
 			
+			if (index + 1 == size) {
+				setTail(newNode);
+			}
 		}
 
 	}
@@ -133,6 +136,9 @@ public class SLL implements LinkedListADT, Serializable {
 
 			previousNode.setNextNode(previousNode.getNextNode().getNextNode());
 			size--;
+			if (index + 1 == size) {
+				setTail(previousNode);
+			}
 		}
 	}
 
