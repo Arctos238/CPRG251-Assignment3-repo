@@ -40,15 +40,17 @@ public class SLL implements LinkedListADT {
 	public boolean isEmpty() {
 		return (head == null);
 	}
-
-	public void addToHead(Object o) {
+	
+	@Override
+	public void prepend(Object o) {
 		head = new Node(o, head);
 		if (tail == null) {
 			tail = head;
 		}
 		size++;
 	}
-
+	
+	@Override
 	public void append(Object o) {
 		if (!isEmpty()) {
 			tail.setNextNode(new Node(o));
@@ -72,22 +74,25 @@ public class SLL implements LinkedListADT {
 		size = 0;
 	}
 
-	@Override
-	public void prepend(Object data) {
-		// TODO Auto-generated method stub
+	
 
-	}
 
 	@Override
 	public void insert(Object data, int index) throws IndexOutOfBoundsException {
 		if (isEmpty()) {
 			System.out.println("List is empty");
+		} else if (index == 0) {
+			prepend(data);
 		} else {
 			int i = 0;
+			Node previousNode;
+			
 			Node newNode = new Node(data);
-			Node currentIndexedNode;
-			Node previousIndexedNode;
-			Node 
+			for (previousNode = head; i < index - 1; i++, previousNode = previousNode.getNextNode());			
+			
+			newNode.setNextNode(previousNode.getNextNode());
+			previousNode.setNextNode(newNode);
+			size++;
 			
 		}
 
@@ -100,9 +105,9 @@ public class SLL implements LinkedListADT {
 		} else {
 			int i = 0;
 			Node node;
-			
+
 			for (node = head; i < index; i++, node = node.getNextNode());
-			
+
 			node.setElement(data);
 		}
 
@@ -120,7 +125,7 @@ public class SLL implements LinkedListADT {
 			Node previousNode;
 
 			for (previousNode = head; i < index - 1; i++, previousNode = previousNode.getNextNode());
-			
+
 			previousNode.setNextNode(previousNode.getNextNode().getNextNode());
 			size--;
 		}

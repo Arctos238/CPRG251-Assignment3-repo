@@ -18,7 +18,7 @@ public class Driver {
 		
 		
 		sll.print();
-		sll.replace("object 3 has been replaced", 4);		
+		sll.insert("Test 3 should be gone", 5);		
 		sll.print();
 	}
 
