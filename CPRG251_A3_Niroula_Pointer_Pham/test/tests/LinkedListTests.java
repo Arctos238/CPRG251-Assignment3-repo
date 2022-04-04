@@ -256,4 +256,42 @@ class LinkedListTests{
 		String value = (String) this.linkedList.retrieve(1);
 		assertEquals("b", value);
 	}
+	
+	@Test
+	void testPrependArray() {
+		int[] oneToTen = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		
+		this.linkedList.append(oneToTen);
+		
+		boolean contains = this.linkedList.contains(oneToTen);
+		assertTrue(contains);
+	}
+	
+	@Test
+	void testDeleteArray() {
+		int[] oneToTen = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		
+		this.linkedList.append(oneToTen);
+		this.linkedList.delete(0);
+		
+		
+		
+		boolean contains = this.linkedList.contains(oneToTen);
+		assertFalse(contains);
+	}
+	
+	@Test
+	void testClear() {
+		this.linkedList.append(1);
+		this.linkedList.append(2);
+		this.linkedList.append(5);
+		this.linkedList.append("ABC");
+		this.linkedList.append('C');
+		this.linkedList.append('1');
+		
+		this.linkedList.clear();
+		
+		boolean isEmpty = this.linkedList.isEmpty();
+		assertTrue(isEmpty);
+	}
 }
