@@ -3,8 +3,8 @@ package sait.sll.problemdomain;
 import java.io.Serializable;
 
 /**
- * Represents a user.
- * @author Nick Hamnett
+ * 
+ * @author Jacque Pointer, Barsha Niroula, Huy Hoang Pham
  * @version 2019-07-25
  *
  */

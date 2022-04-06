@@ -146,6 +146,8 @@ public class SLL implements LinkedListADT, Serializable {
 	public Object retrieve(int index) throws IndexOutOfBoundsException {
 		if (isEmpty()) {
 			return null;
+		} else if (size() < index - 1) {
+			throw new IndexOutOfBoundsException();
 		} else {
 			int currentIndex = 0;
 
@@ -162,7 +164,7 @@ public class SLL implements LinkedListADT, Serializable {
 	@Override
 	public int indexOf(Object data) {
 		if (isEmpty()) {
-			return 0;
+			return -1;
 		} else {
 			int index = 0;
 			for (Node tempNode = head; tempNode != null; index++, tempNode = tempNode.getNextNode()) {
@@ -172,7 +174,7 @@ public class SLL implements LinkedListADT, Serializable {
 			}
 		}
 
-		return 0;
+		return -1;
 	}
 
 	@Override
